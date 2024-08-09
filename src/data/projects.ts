@@ -63,7 +63,6 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
       "/images/projects/cafe resturant/Restaurant.webp",
       "/images/projects/cafe resturant/Restaurant1.webp",
       "/images/projects/cafe resturant/Restaurant2.webp",
-
     ],
     description: "Firebase is banned in Iran,please open it with VPN",
     sourceCodeHref: "https://github.com/BUMBAIYA/kanban",

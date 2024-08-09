@@ -1,10 +1,4 @@
-import {
-  SiExpress,
-  SiSocketdotio,
-  SiPrisma,
-  SiNextdotjs,
-  SiFlask,
-} from "react-icons/si";
+import { SiSocketdotio, SiNextdotjs } from "react-icons/si";
 import {
   FramerMotionIcon,
   ReactRouterDomIcon,
@@ -30,7 +24,6 @@ import ViteSvg from "@/public/icons/vite.svg";
 // Tools and Tech
 import GitSvg from "@/public/icons/git.svg";
 import DockerSvg from "@/public/icons/docker.svg";
-import AwsSvg from "@/public/icons/aws.svg";
 import PostmanSvg from "@/public/icons/postman.svg";
 import TrelloSvg from "@/public/icons/Trello.svg";
 
