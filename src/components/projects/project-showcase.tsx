@@ -53,7 +53,6 @@ export default function ProjectShowcase(props: ProjectShowcaseProps) {
             >
               <Image
                 src={images[currentImage].LIGHT}
-                unoptimized
                 width={100}
                 height={100}
                 className="h-auto w-1/2 rounded-lg border border-zinc-300 shadow-lg dark:hidden dark:border-accent/50"

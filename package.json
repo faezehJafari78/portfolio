@@ -29,6 +29,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "react-tooltip": "^5.28.0",
     "sharp": "^0.32.1",
     "swiper": "^11.1.9",
     "yet-another-react-lightbox": "^3.21.3",

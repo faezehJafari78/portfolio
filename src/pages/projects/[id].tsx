@@ -17,7 +17,7 @@ const ProjectById = () => {
   }, [query.id]);
 
   return (
-    <div className="mx-auto flex flex-col justify-around pb-6 pt-5 md:flex-row ">
+    <div className="mx-auto flex flex-col justify-around pt-8 md:flex-row ">
       <div className="mx-auto w-[90%] md:w-[42%]">
         <Gallery items={projectData?.imageUrl || []} />
       </div>

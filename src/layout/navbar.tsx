@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { AnimatePresence, motion } from "framer-motion";
-
 import MenuLogo from "@/components/utility/menu-button";
-import ThemeSwitch from "@/components/utility/theme-switch";
 import MobileMenu from "@/components/utility/mobile-menu";
 import { classNames } from "@/utility/classNames";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useRouter } from "next/router";
+import { Tooltip } from "react-tooltip";
 
 export type NavbarRoute = {
   title: string;
@@ -51,24 +49,27 @@ export default function Navbar(props: NavbarProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 mt-2 px-6 py-8 sm:mt-8 sm:px-14 md:px-20">
+    <header className="sticky top-0 z-50 mt-2 px-6 py-1 sm:mt-6 sm:px-14 md:px-20">
       <div className="mx-auto flex items-center justify-between lg:max-w-7xl">
         <Link
           href="/"
           className="drop-shadow-teralight flex items-center justify-center"
           aria-label="Return to home page"
         >
-          <div className="flex hidden items-center gap-2 space-x-4 rounded-full  px-6 py-4  shadow-md backdrop-blur-md dark:ring-accent/50 md:flex">
+          <div className=" hidden items-center gap-2 space-x-4 rounded-full px-6 py-4  shadow-md ring-1  ring-zinc-200 backdrop-blur-md dark:ring-accent/50 md:flex">
             {socialNetworks.map((network) => (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 key={network.name}
-                className="flex transform cursor-pointer items-center justify-center rounded-full transition-transform duration-200 ease-in-out hover:scale-110 hover:bg-gray-800"
+                className="flex transform  cursor-pointer items-center justify-center rounded-full transition-transform duration-200 ease-in-out hover:scale-110 hover:bg-gray-800"
                 data-tip={network.name}
               >
                 <div
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={network.name}
+                  data-tooltip-place="top"
                   onClick={() => push(network.link)}
                   rel="noopener noreferrer"
                   className="mx-1"
@@ -117,7 +118,7 @@ export default function Navbar(props: NavbarProps) {
               );
             })}
           </ul>
-          <ThemeSwitch />
+          {/*<ThemeSwitch />*/}
         </nav>
         <AnimatePresence>
           <MenuLogo open={isModalOpen} toggle={toggleModal} />
@@ -129,6 +130,7 @@ export default function Navbar(props: NavbarProps) {
         openMenu={isModalOpen}
         setOpenMenu={setIsModalOpen}
       />
+      <Tooltip id="my-tooltip" />
     </header>
   );
 }

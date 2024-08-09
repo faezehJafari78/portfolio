@@ -28,7 +28,7 @@ export const Gallery = ({ items }: { items: string[] }) => {
     src: image,
   }));
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%]">
       <Swiper
         controller={{ control: secondSwiper }}
         spaceBetween={10}
@@ -40,7 +40,7 @@ export const Gallery = ({ items }: { items: string[] }) => {
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
         modules={[FreeMode, Navigation, Thumbs, Controller]}
-        className="h-[350px] w-[100%] rounded-xl md:h-[460px]"
+        className="h-[350px] w-[100%] rounded-xl md:h-[420px]"
       >
         {items?.map((item, index) => (
           <SwiperSlide key={index} className="">
