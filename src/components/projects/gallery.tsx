@@ -23,7 +23,6 @@ export const Gallery = ({ items }: { items: string[] }) => {
   const [secondSwiper] = useState<SwiperClass>();
   const [myIndex, setIndex] = useState(-1);
   const thumbnailsRef = useRef(null);
-  console.log("imgds:", items);
 
   const myImages = items?.map((image) => ({
     src: image,
@@ -33,6 +32,7 @@ export const Gallery = ({ items }: { items: string[] }) => {
       <Swiper
         controller={{ control: secondSwiper }}
         spaceBetween={10}
+        loop={true}
         slidesPerView={1}
         grabCursor={true}
         navigation={true}
@@ -42,17 +42,16 @@ export const Gallery = ({ items }: { items: string[] }) => {
         modules={[FreeMode, Navigation, Thumbs, Controller]}
         className="h-[350px] w-[100%] rounded-xl md:h-[460px]"
       >
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <SwiperSlide key={index} className="">
             <Image
               priority={true}
               onClick={() => setIndex(index)}
-              width={900}
-              height={900}
-              className="w-[100%]"
+              fill
+              className="w-[100%] object-cover"
               // src={`data:${item?.contentType};base64,${item?.data}`}
               src={item ?? ""}
-              alt=""
+              alt="item2"
             />
           </SwiperSlide>
         ))}
@@ -70,16 +69,15 @@ export const Gallery = ({ items }: { items: string[] }) => {
         modules={[Navigation, FreeMode, Thumbs, Controller]}
         className="mx-auto mt-[20px] flex h-[100px] !w-[100%] cursor-pointer justify-center rounded-xl"
       >
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <SwiperSlide key={index} className="swiper-slide-auto !w-[20%]">
             <Image
+              fill
               priority={true}
-              width={900}
-              height={900}
-              className="h-[100px] rounded-xl "
+              className="h-[100px] rounded-xl object-cover "
               // src={`data:${item?.contentType};base64,${item?.data}`}
               src={item ?? ""}
-              alt=""
+              alt="item"
             />
           </SwiperSlide>
         ))}
