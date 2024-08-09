@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import { NextSeo } from "next-seo";
 
-import LandingHero from "@/components/landing-hero";
 import SkillsShowcase from "@/components/skills/skills-showcase";
 import ProjectShowcase from "@/components/projects/project-showcase";
 import CursorTrailCanvas from "@/components/cursor-trail-canvas";
