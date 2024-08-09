@@ -5,7 +5,8 @@ import { PROJECTS_CARD } from "@/data/projects";
 import { siteMetadata } from "@/data/siteMetaData.mjs";
 
 export default function Index() {
-  return (
+
+    return (
     <>
       <NextSeo
         title="Index by Faezeh Jafari - React and Frontend Developer Portfolio"

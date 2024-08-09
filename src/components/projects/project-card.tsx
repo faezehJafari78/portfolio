@@ -5,7 +5,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 import Corosel from "@/components/utility/corosel";
 import { GithubIcon } from "@/components/icons";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 export interface ProjectCardProps {
   name: string;
